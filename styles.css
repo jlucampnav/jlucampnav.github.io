@@ -104,8 +104,8 @@ footer {
 }
 
 #float-container {
-  width: 300px;
-  height: 250px;
+  width: 160px;
+  height: 300px;
   position: fixed;
   right: 10px; /* 右侧边距 */
   top: 50%; /* 使其位于页面垂直方向的中间 */
