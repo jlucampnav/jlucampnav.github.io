@@ -11,7 +11,7 @@
 
 <body>
   <script async="async" data-cfasync="false" src="//pl26149236.effectiveratecpm.com/21db9878ae078a0b58fff7e509cc4cf4/invoke.js"></script>
-  <div id="container-21db9878ae078a0b58fff7e509cc4cf4" height=18vh width=100vw></div>
+  <div id="container-21db9878ae078a0b58fff7e509cc4cf4"></div>
   <header>
     <h1>吉林大学导航网站</h1>
     <p>以下为各类校园系统的分类整合</p>
@@ -20,7 +20,7 @@
     </div>
   </header>
   <main>
-    <section class="category">
+    <section class="category" id="target-section">
       <h2>常用网站</h2>
       <ul>
         <li><a href="https://ilearntec.jlu.edu.cn/" target="_blank">学在吉大xzjd - 课程回放，直播录播</a></li>
@@ -195,6 +195,9 @@
         section.style.display = anyVisible ? "" : "none";
       });
     }
+    window.onload = function () {
+      document.getElementById("target-section").scrollIntoView({ behavior: "smooth" });
+    };
   </script>
 </body>
 
