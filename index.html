@@ -9,22 +9,29 @@
 </head>
 
 <body>
-  
   <script async="async" data-cfasync="false" src="//pl26149236.effectiveratecpm.com/21db9878ae078a0b58fff7e509cc4cf4/invoke.js"></script>
   <div id="container-21db9878ae078a0b58fff7e509cc4cf4"></div>
   <header>
     <h1>吉林大学导航网站</h1>
     <p>以下为各类校园系统的分类整合</p>
+    <div class="feedback">
+      <p>反馈邮箱: <a href="mailto:jlucampnav@outlook.com">jlucampnav@outlook.com</a></p>
+    </div>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="搜索本站内容..." onkeyup="siteSearch()">
+    </div>
   </header>
   <main>
     <section class="category">
       <h2>常用网站</h2>
       <ul>
-        <li><a href="https://ilearntec.jlu.edu.cn/" target="_blank">iLearnTec 在线学习</a></li>
-        <li><a href="https://vpn.jlu.edu.cn/" target="_blank">VPN 登录</a></li>
-        <li><a href="https://iedu.jlu.edu.cn/" target="_blank">iEdu 教育平台</a></li>
-        <li><a href="https://mails.jlu.edu.cn/" target="_blank">学生邮箱</a></li>
-        <li><a href="http://libzwyy.jlu.edu.cn/" target="_blank">鼎新图书馆座位预约</a></li>
+        <li><a href="https://ilearntec.jlu.edu.cn/" target="_blank">学在吉大xzjd - 课程回放，直播录播</a></li>
+        <li><a href="https://vpn.jlu.edu.cn/" target="_blank">vpn系统 - 我看这个才是融合门户（打开手机流量开这个就啥都找到了，注意不要用校园网）</a></li>
+        <li><a href="https://iedu.jlu.edu.cn/" target="_blank">教务管理系统jw - 成绩查询，教材查询</a></li>
+        <li><a href="https://mails.jlu.edu.cn/" target="_blank">学生邮箱xsyx - 学生的邮箱</a></li>
+        <li><a href="https://zhxg.jlu.edu.cn/xg/index/" target="_blank">智慧学工zhxg - 请假，返乡报备</a></li>
+        <li><a href="http://libzwyy.jlu.edu.cn/" target="_blank">鼎新图书馆座位预约dx - 鼎新图书馆的座位需要提前预约，其他的图书馆不需要</a></li>
+        <li><a href="http://i.jlu.edu.cn/" target="_blank">融合门户rhmh - 有你的大头像，不太知道这是干啥的，知道的同学邮箱反馈一下，感谢</a></li>
       </ul>
       </ul>
     </section>
@@ -148,15 +155,6 @@
   <footer>
     <p>&copy; 2077 吉林genshin大学</p>
   </footer>
-  <a id="ad-link" href="https://www.effectiveratecpm.com/ttq1w6q4a?key=1df6dfdfba37fbd70d28dc6912cc8eff" target="_blank">
-    <div id="ad-container" onclick="hideAd()">
-    </div>
-  </a>
-  <script>
-    function hideAd() {
-      document.getElementById("ad-container").style.display = "none";
-    }
-  </script>
   <div id="float-container">
     <script type="text/javascript">
     	atOptions = {
@@ -169,7 +167,34 @@
     </script>
     <script type="text/javascript" src="//www.highperformanceformat.com/67f6f11594814d42369c31fc0408b0cd/invoke.js"></script>
   </div>
-  <script type='text/javascript' src='//pl26149316.effectiveratecpm.com/3d/a1/19/3da119e472428351cdbc71c2f83e212b.js'></script>
+  <script>
+    function siteSearch() {
+      const input = document.getElementById("search-input").value.toLowerCase();
+      // 获取所有链接
+      const links = document.querySelectorAll("main a");
+      links.forEach(link => {
+        // 如果链接文本中包含搜索关键词，则显示，否则隐藏
+        if (link.textContent.toLowerCase().includes(input)) {
+          link.parentElement.style.display = "";
+        } else {
+          link.parentElement.style.display = "none";
+        }
+      });
+      // 对于每个分类区块，根据其子项是否都隐藏来决定是否隐藏整个分类
+      const categories = document.querySelectorAll("main .category");
+      categories.forEach(section => {
+        // 查找该分类内所有列表项
+        const items = section.querySelectorAll("ul li");
+        let anyVisible = false;
+        items.forEach(item => {
+          if (item.style.display !== "none") {
+            anyVisible = true;
+          }
+        });
+        section.style.display = anyVisible ? "" : "none";
+      });
+    }
+  </script>
 </body>
 
 </html>
